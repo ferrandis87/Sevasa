@@ -392,7 +392,7 @@ $(".BOLSA:contains('980')").text('378 - 980');
 $(".BOLSA:contains('209')").text('379 - 209');
 $(".BOLSA:contains('538')").text('380 - 538');
 $(".BOLSA:contains('540')").text('381 - 540');
-$(".BOLSA:contains('849')").text('la monguer');
+$(".BOLSA:contains('849')").text('382 - 849');
 $(".BOLSA:contains('933')").text('383 - 933');
 $(".BOLSA:contains('235')").text('384 - 235');
 $(".BOLSA:contains('459')").text('385 - 459');
