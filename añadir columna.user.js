@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         añadir columna
 // @namespace    http://tampermonkey.net/
-// @version      0.3
+// @version      0.4
 // @icon         data:image/x-icon;base64,AAABAAEAICAEAAEABADoAgAAFgAAACgAAAAgAAAAQAAAAAEABAAAAAAAgAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAIAAAACAgAAAAACAAACAgACAAIAAgICAAMDAwAAA/wAA/wAAAP//AAAAAP8AAP//AP8A/wD///8AIiIiIiIiIiIiIiIiIiIiIiiIiIgru7u7u7u7u7u7u7IoiIiIgru7u7u7u7u7u7uyKIiIiIK7u7u7u7u7u7u7siiIiIiIK7u7u7u7u7u7u7IoiIiIiCu7u7u7u7u7u7uyKIiIiIiCu7u7u7u7u7u7siiIiIiIgru7u7u7u7u7u7IoiIiIiIgru7u7u7u7u7uyKIiIiIiIK7u7u7u7u7u7siiIiIiIiIK7u7u7u7u7u7IoiIiIiIiCu7u7u7u7u7uyKIiIiIiIiCu7u7u7u7u7siiIiIiIiIgru7u7u7u7u7IoiIiIiIiIgiIiIiIiIiIiKIiIiIiIiILd3d3d3d3d0iiIiIiIiIiILd3d3d3d3dIoiIiIiIiIiC3d3d3d3d3SIiIiIiIiIiIiIiIiIiIiIiiILd3d0t0t3d3S3S3dLdIoiC3d3dLdLd3d0t0t3S3SKIgt3d3S3S3d3dLdLd0t0iiIIiIiIiIiIiIiIiIiIiIoiCuy3dLdLd0rst0t3S3SKIgruy3S3S3Su7LdLd0t0iiIK7uy0t0tK7uy3S3dLdIoiCu7uyLdIru7st0t3S3SKIgru7uy3Su7u7IiItIiIiiIK7u7uyK7u7uyu7Iiu7IoiCu7u7u7u7u7u7u7K7uyKIgru7u7u7u7u7u7u7u7siIiIiIiIiIiIiIiIiIiIiIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA%3D%3D
 // @updateURL    https://github.com/ferrandis87/Sevasa/raw/master/a%C3%B1adir%20columna.user.js
 // @description  Saber puertas de la bolsa de SEVASA
@@ -14,9 +14,12 @@
 
 GM_addStyle(`
 .CENSO {font: bold 12pt Courier New; text-align: center; color: #ff2700;}
+.CENSOB {font: bold 12pt Courier New; text-align: center; background-color: #F2FF74;}
 .BOLSA {font: bold 12pt Courier New; text-align: center;}
 .SUMA {font: bold 12pt Courier New; text-align: center; vertical-align: middle; color: blue;}
+.SUMA2 {font: bold 12pt Courier New; text-align: center; vertical-align: middle; color: blue;}
 .TOTAL {font: bold 12pt Courier New; text-align: center; color: red;}
+.TOTAL2 {font: bold 12pt Courier New; text-align: center; color: red;}
 TH { font:12pt Verdana; background: gray; color: white; border: 2px solid #333; }
 tr:nth-child(even) { background-color: #dddddd; border: 2px solid #333;}
 table tbody:last-child:after { height: 20; }
@@ -401,8 +404,8 @@ $(this).find(".BOLSA:contains('454')").before('<td align="center" nowrap=""><spa
 $(this).find(".BOLSA:contains('927')").before('<td align="center" nowrap=""><span class="CENSO">355</span></td>');
 $(this).find(".BOLSA:contains('825')").before('<td align="center" nowrap=""><span class="CENSO">356</span></td>');
 $(this).find(".BOLSA:contains('826')").before('<td align="center" nowrap=""><span class="CENSO">357</span></td>');
-$(this).find(".BOLSA:contains('849')").before('<td align="center" nowrap=""><span class="CENSO">358</span></td>');
-$(this).find(".BOLSA:contains('824')").before('<td align="center" nowrap=""><span class="CENSO">359</span></td>');
+$(this).find(".BOLSA:contains('849')").addClass('CENSOB').before('<td align="center" nowrap=""><span class="CENSO">358</span></td>').siblings().addClass('CENSOB');
+$(this).find(".BOLSA:contains('824')").addClass('CENSOB').before('<td align="center" nowrap=""><span class="CENSO">359</span></td>').siblings().addClass('CENSOB');
 $(this).find(".BOLSA:contains('801')").before('<td align="center" nowrap=""><span class="CENSO">360</span></td>');
 $(this).find(".BOLSA:contains('843')").before('<td align="center" nowrap=""><span class="CENSO">361</span></td>');
 $(this).find(".BOLSA:contains('844')").before('<td align="center" nowrap=""><span class="CENSO">362</span></td>');
@@ -523,6 +526,7 @@ $(this).find(".BOLSA:contains('576')").before('<td align="center" nowrap=""><spa
 $(this).find(".BOLSA:contains('577')").before('<td align="center" nowrap=""><span class="CENSO">XXX</span></td>');
 $(this).find(".BOLSA:contains('578')").before('<td align="center" nowrap=""><span class="CENSO">XXX</span></td>');
 $(this).find(".BOLSA:contains('575')").before('<td align="center" nowrap=""><span class="CENSO">XXX</span></td>');
+// $(this).find(".BOLSA:contains('849')").siblings().addClass("CENSOB");
 });
 
 $(document).ready(function(){
@@ -542,3 +546,4 @@ $(".SUMA").each(function(){
     $('#TOTAL').html("<span class='TOTAL'>" + totalDeuda + "</span>");
 });
 });
+
