@@ -522,6 +522,7 @@ $(this).find(".BOLSA:contains('579')").before('<td align="center" nowrap=""><spa
 $(this).find(".BOLSA:contains('576')").before('<td align="center" nowrap=""><span class="CENSO">XXX</span></td>');
 $(this).find(".BOLSA:contains('577')").before('<td align="center" nowrap=""><span class="CENSO">XXX</span></td>');
 $(this).find(".BOLSA:contains('578')").before('<td align="center" nowrap=""><span class="CENSO">XXX</span></td>');
+$(this).find(".BOLSA:contains('575')").before('<td align="center" nowrap=""><span class="CENSO">XXX</span></td>');
 });
 
 $(document).ready(function(){
