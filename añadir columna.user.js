@@ -14,7 +14,7 @@
 
 GM_addStyle(`
 .CENSO {font: bold 12pt Courier New; text-align: center; color: #ff2700;}
-.CENSOB {font: bold 12pt Courier New; text-align: center; background-color: #F2FF74;}
+.CENSOB {font: bold 12pt Courier New; background-color: #F2FF74;}
 .BOLSA {font: bold 12pt Courier New; text-align: center;}
 .SUMA {font: bold 12pt Courier New; text-align: center; vertical-align: middle; color: blue;}
 .SUMA2 {font: bold 12pt Courier New; text-align: center; vertical-align: middle; color: blue;}
